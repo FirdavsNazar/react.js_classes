@@ -7,8 +7,8 @@ import MovieListItem from '../Movie-list-item/movie-list-item'
      <div className='movie-list'>
 
       {data.map(item => (
-        // <MovieListItem name = {item.name}  viewer={item.viewer} favourite={item.favourite}/>
-        <MovieListItem {...item}/>
+        <MovieListItem key={item.id} name = {item.name}  viewer={item.viewer} favourite={item.favourite}/>
+        // <MovieListItem {...item}/>
       ))}
              
      </div>
