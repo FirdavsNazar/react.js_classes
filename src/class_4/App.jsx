@@ -10,15 +10,19 @@ class User extends Component{
     }
 
     Increment=() =>{
-        this.setState(prevState => ({
-            counter: prevState.counter+1
-        }))
+        if(this.state.counter < 32){
+            this.setState(prevState => ({
+                counter: prevState.counter+1
+            }))
+        }
     }
 
     Decrement=() =>{
-        this.setState(prevState => ({
-            counter: prevState.counter-1
-        }))
+        if(this.state.counter > 0){
+            this.setState(prevState => ({
+                counter: prevState.counter-1
+            }))
+        }
     }
 
     Restart = () =>{
@@ -30,12 +34,12 @@ class User extends Component{
     }
 
     render(){
-        const {firstName, lastName, link,} = this.props
+        const {firstName, lastName, link, age} = this.props
         return(
             <div className="w-50 mx-auto">
                 <div className="border p-3 mt-5">
                 <h3>
-                    Mening ismim - {firstName}, sharifim - {lastName},  yoshim -{this.state.age}
+                    Mening ismim - {firstName}, sharifim - {lastName},  yoshim: {age}
                 </h3>
                 <a href={link}> Youtube kanali</a>
                     <div className="mt-3">
