@@ -34,7 +34,8 @@ class User extends Component{
     }
 
     render(){
-        const {firstName, lastName, link, age} = this.props
+        const {firstName, lastName, link} = this.props
+        const {age} = this.state
         return(
             <div className="w-50 mx-auto">
                 <div className="border p-3 mt-5">
