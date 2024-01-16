@@ -17,9 +17,9 @@ class App extends Component{
 
     this.state = {
       data: [
-       {name: "Abdulloh",  view:675, favourite: false, id: 1 },
-       {name: "Sen Yetim Emassan",  viewe:1432, favourite: true, id:2 },
-       {name: "Ey ko'ngil",  view:995, favourite: false, id:3 }
+       {name: "Abdulloh",  viewers:675, favourite: false, id: 1 },
+       {name: "Sen Yetim Emassan",  viewers:1432, favourite: true, id:2 },
+       {name: "Ey ko'ngil",  viewers:995, favourite: false, id:3 }
      
      ]
     }
