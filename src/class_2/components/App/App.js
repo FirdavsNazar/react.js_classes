@@ -6,7 +6,7 @@ import SearchPanel from "../Search-panel/Search-panel"
 import MovieList from '../Movie-list/movie-list'
 import MoviesAddForm from '../Movies-add-form/movies-add-form'
 import { Component } from 'react'
-import { render } from '@testing-library/react'
+import {v4 as uuidv4} from 'uuid'
 
 
 // Class Components********************************************************************************
@@ -27,8 +27,15 @@ class App extends Component{
 
     onDelete = id =>{
       this.setState(({data}) =>({
-        data: data.filter(a => a.id !== id),
+        data: data.filter(a => a.id !==  id),
       }))
+    }
+
+    addForm = item =>{
+      this.setState(({data}) => ({
+        data: [...data, { id: data.length +1, ...item,}]
+      }))
+  
     }
 
   render(){
@@ -42,7 +49,7 @@ class App extends Component{
             <AppFilter/>
           </div>
           <MovieList data ={data} onDelete={this.onDelete}/>
-          <MoviesAddForm/>
+          <MoviesAddForm addForm={this.addForm}/>
         </div>
         
       </div>
