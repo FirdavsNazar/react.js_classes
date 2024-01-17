@@ -31,12 +31,18 @@ class App extends Component{
       }))
     }
 
-    addForm = item =>{
-      this.setState(({data}) => ({
-        data: [...data, { id: data.length +1, ...item,}]
-      }))
-  
+    addForm = item => {
+      const newItem = {
+        name: item.name,
+        viewers: item.viewers,
+        id: uuidv4()
+      };
+    
+      this.setState(({ data }) => ({
+        data: [...data, newItem]
+      }));
     }
+    
 
   render(){
     const {data} = this.state
