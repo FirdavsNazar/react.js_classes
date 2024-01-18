@@ -36,7 +36,7 @@ class App extends Component{
         name: item.name,
         viewers: item.viewers,
         id: uuidv4()
-      };
+      };  
     
       this.setState(({ data }) => ({
         data: [...data, newItem]
