@@ -19,6 +19,7 @@ changeName = e =>{
   // console.log(e);
 }
 
+
 addFormHandler = e => {
   e.preventDefault()
   this.props.addForm({name: this.state.name, viewers: this.state.views})
