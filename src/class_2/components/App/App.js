@@ -79,7 +79,7 @@ class App extends Component{
           <AppInfo/>
           <div className='search-panel'>
             <SearchPanel  updateTermHandler={this.updateTermHandler}/>
-            <AppFilter  updateFilterHandler={this.updateFilterHandler}/>
+            <AppFilter filter={filter} updateFilterHandler={this.updateFilterHandler}/>
           </div>
           <MovieList data ={visibleData} onDelete={this.onDelete}/>
           <MoviesAddForm addForm={this.addForm}/>
