@@ -23,6 +23,7 @@ class App extends Component{
      
      ],
      term: '',
+     filter: 'all',
     }
   } 
 
@@ -52,19 +53,33 @@ class App extends Component{
       return arr.filter(item => item.name.toLowerCase().indexOf(term) > -1)
     }
 
+    filterHandler = (arr, filter) => {
+      switch (filter) {
+        case 'popular':
+          return arr.filter(c => c.favourite)
+        case 'mostViewed':
+          return arr.filter(c => c.viewers > 800)
+      
+        default:
+          return arr
+      }
+    }
+
     updateTermHandler = term => this.setState({term})
+
+    updateFilterHandler = filter => this.setState({filter})
     
 
   render(){
-    const {data, term} = this.state
-    const visibleData = this.searchHandler(data, term)
+    const {data, term, filter} = this.state
+    const visibleData = this.filterHandler(this.searchHandler(data, term), filter) 
     return (
       <div className="app font-monospace">
         <div className="content">
           <AppInfo/>
           <div className='search-panel'>
             <SearchPanel  updateTermHandler={this.updateTermHandler}/>
-            <AppFilter/>
+            <AppFilter  updateFilterHandler={this.updateFilterHandler}/>
           </div>
           <MovieList data ={visibleData} onDelete={this.onDelete}/>
           <MoviesAddForm addForm={this.addForm}/>
