@@ -13,6 +13,7 @@ const AppFilter = ({updateFilterHandler,filter}) => {
   )
 }
 
+
 const btnArr = [
   {name: "all", label: "Barcha kinolar"},
   {name: "popular", label: "Mashhur kinolar"},
