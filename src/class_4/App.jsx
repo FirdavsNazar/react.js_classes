@@ -82,7 +82,7 @@
 
 // Function Components ///////////////////////////////////////////////////////////////
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const User = ({ firstName, lastName, link }) => {
     const [counter, setCounter] = useState(0);
@@ -107,6 +107,11 @@ const User = ({ firstName, lastName, link }) => {
     const changeAge = (e) => {
         setAge(e.target.value);
     }
+
+    
+    useEffect(() => {
+        document.title = `Counter: ${counter}`
+    })
 
     return (
         <div className="w-50 mx-auto">
