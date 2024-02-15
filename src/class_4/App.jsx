@@ -87,6 +87,7 @@ import React, { useEffect, useState } from 'react';
 const User = ({ firstName, lastName, link }) => {
     const [counter, setCounter] = useState(0);
     const [age, setAge] = useState('');
+    const [active, setActive] = useState(true)
 
     const Increment = () => {
         if (counter < 32) {
@@ -106,6 +107,10 @@ const User = ({ firstName, lastName, link }) => {
 
     const changeAge = (e) => {
         setAge(e.target.value);
+    }
+
+    const colors = {
+        color: active ? "red" : "green"
     }
 
 
@@ -129,7 +134,7 @@ const User = ({ firstName, lastName, link }) => {
                     <button onClick={Increment} className="btn btn-success"> Click(+)</button>
                     <button onClick={Decrement} className="btn btn-danger mx-2"> Click(-)</button>
                     <button onClick={Restart} className="btn btn-info"> Restart</button>
-                    <p>{counter}</p>
+                    <p style={colors}>{counter}</p>
                 </div>
 
                 <form>
