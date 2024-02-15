@@ -109,19 +109,23 @@ const User = ({ firstName, lastName, link }) => {
     }
 
 
-    
+
     useEffect(() => {
         document.title = `Counter: ${counter}`
-    })
+
+        return () => console.log("Deleted");
+    }, [])
 
     return (
         <div className="w-50 mx-auto">
+            <button>Delete</button>
             <div className="border p-3 mt-5">
                 <h3>
                     Mening ismim - {firstName}, sharifim - {lastName},  yoshim: {age}
                 </h3>
                 <a href={link}> Youtube kanali</a>
                 <div className="mt-3">
+                   
                     <button onClick={Increment} className="btn btn-success"> Click(+)</button>
                     <button onClick={Decrement} className="btn btn-danger mx-2"> Click(-)</button>
                     <button onClick={Restart} className="btn btn-info"> Restart</button>
