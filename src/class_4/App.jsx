@@ -108,6 +108,7 @@ const User = ({ firstName, lastName, link }) => {
         setAge(e.target.value);
     }
 
+
     
     useEffect(() => {
         document.title = `Counter: ${counter}`
