@@ -14,6 +14,6 @@
 
 // console.log(c);
 
-let test = null == undefined
+let test = "1" + "0"
 
 console.log(test);
