@@ -17,6 +17,7 @@ const User = ()=>{
         }
     }
 
+    
     const handleInputVal = e =>{
         const val = e.target.value
         setDataNumber(val)
