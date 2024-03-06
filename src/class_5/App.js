@@ -42,4 +42,5 @@ function App() {
   return <User firstname= 'Firdavs' lastname= 'Nazarov' Link = 'www.fredrick' />
 }
 
+
 export default App
