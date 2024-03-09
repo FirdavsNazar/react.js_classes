@@ -5,7 +5,7 @@ import AppFilter from "../App-filter/App-filter"
 import SearchPanel from "../Search-panel/Search-panel"
 import MovieList from '../Movie-list/movie-list'
 import MoviesAddForm from '../Movies-add-form/movies-add-form'
-import { Component } from 'react'
+import { Component, useEffect } from 'react'
 import {v4 as uuidv4} from 'uuid'
 
 
@@ -68,7 +68,24 @@ class App extends Component{
     updateTermHandler = term => this.setState({term})
 
     updateFilterHandler = filter => this.setState({filter})
-    
+
+
+    // useEffect(() => {
+    //   fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5')
+    //   .then(response => response.json())
+    //   .then(json => {
+    //     const newArr = json.map(item => ({
+    //       name: item.title,
+    //       id: item.id,
+    //       viewers: item.id * 20,
+    //       favourite: false,
+    //       like: false
+    //     }))
+    //     setData(newArr)
+    //   })
+    //   .catch(arr => console.log())
+    // }, [])
+
 
   render(){
     const {data, term, filter} = this.state
