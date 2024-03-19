@@ -53,6 +53,7 @@ const App = () => {
       .then(response => response.json())
       .then(json => {
         const newArr = json.map(item => ({
+          
           name: item.title,
           id: item.id,
           viewers: item.id * 20,
