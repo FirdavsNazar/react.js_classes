@@ -43,6 +43,7 @@ const App = () => {
     }
   }
 
+
   const updateTermHandler = term => setTerm(term);
   const updateFilterHandler = filter => setFilter(filter);
 
